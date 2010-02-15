@@ -1,23 +1,21 @@
-<p>
-  <b>Title:</b>
+<h3>
   <%=h @calendar.title %>
-</p>
-
+</h3>
 <p>
-  <b>Description:</b>
   <%=h @calendar.description %>
 </p>
-
-<p>
-  <b>Created at:</b>
-  <%=h @calendar.created_at %>
-</p>
-
-<p>
-  <b>Updated at:</b>
-  <%=h @calendar.updated_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
+<% #if session[:user_id] %>
+  <%= link_to 'Edit', edit_calendar_path(@calendar) %> |
+<% #end %>
 <%= link_to 'Back', calendars_path %>
+
+<br />
+
+
+<h3>Events</h3>
+  <%= render @calendar.events %>
+<br />
+
+
+<h3>Create new event</h3>
+<%= render 'events/form', :calendar => @calendar, :event => Event.new %>

@@ -46,3 +46,12 @@ Migrating to CreateEvents (20100215221848)
 [0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("calendars")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("events")[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2010-02-15 23:48:53) [GET]
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY created_at DESC LIMIT 3[0m
+  [4;35;1mCalendar Load (0.0ms)[0m   [0mSELECT * FROM "calendars" [0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY created_at desc LIMIT 3[0m
+Rendering template within layouts/calendars
+Rendering calendars/index
+Completed in 2268ms (View: 2216, DB: 1) | 200 OK [http://localhost/calendars]

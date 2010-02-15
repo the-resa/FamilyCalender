@@ -1,23 +1,10 @@
-<h1>New calendar</h1>
+<h2>New calendar</h2>
 
 <% form_for(@calendar) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :created_at %><br />
-    <%= f.datetime_select :created_at %>
-  </p>
-  <p>
-    <%= f.label :updated_at %><br />
-    <%= f.datetime_select :updated_at %>
+    <%= render 'form', :f => f %>
   </p>
   <p>
     <%= f.submit 'Create' %>

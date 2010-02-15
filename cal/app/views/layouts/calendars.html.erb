@@ -9,9 +9,15 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<div id="box">
+  <h1><%= link_to "Many Calendars", calendars_path, :class => 'title' %></h1>
+</div>
+
+<p><%= flash[:notice] %></p>
 
 <%= yield %>
+
+  <p id="footer">&copy;2010 by TA & AF</p>
 
 </body>
 </html>
