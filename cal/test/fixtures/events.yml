@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  calendar_id: 1
+  title: MyString
+  description: MyText
+  start_at: 2010-02-15 23:18:48
+  stop_at: 2010-02-15 23:18:48
+  created_at: 2010-02-15 23:18:48
+  updated_at: 2010-02-15 23:18:48
+
+two:
+  calendar_id: 1
+  title: MyString
+  description: MyText
+  start_at: 2010-02-15 23:18:48
+  stop_at: 2010-02-15 23:18:48
+  created_at: 2010-02-15 23:18:48
+  updated_at: 2010-02-15 23:18:48
