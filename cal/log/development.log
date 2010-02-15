@@ -1,57 +1,59 @@
-  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
-  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [4;35;1mSQL (4.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreateCalendars (20100215221515)
-  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
-  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100215221515')[0m
-Migrating to CreateEvents (20100215221848)
-  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "calendar_id" integer, "title" varchar(255), "description" text, "start_at" datetime, "stop_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
-  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100215221848')[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("calendars")[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("events")[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreateCalendars (20100215221515)
-Migrating to CreateEvents (20100215221848)
-  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
-  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("calendars")[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("events")[0m
 
 
-Processing CalendarsController#index (for 127.0.0.1 at 2010-02-15 23:48:53) [GET]
-  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY created_at DESC LIMIT 3[0m
-  [4;35;1mCalendar Load (0.0ms)[0m   [0mSELECT * FROM "calendars" [0m
-  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY created_at desc LIMIT 3[0m
+Processing CalendarsController#index (for 127.0.0.1 at 2010-02-15 23:54:25) [GET]
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM "events" ORDER BY created_at DESC LIMIT 3[0m
+  [4;36;1mCalendar Load (0.0ms)[0m   [0;1mSELECT * FROM "calendars" [0m
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM "events" ORDER BY created_at desc LIMIT 3[0m
 Rendering template within layouts/calendars
 Rendering calendars/index
-Completed in 2268ms (View: 2216, DB: 1) | 200 OK [http://localhost/calendars]
+Completed in 22ms (View: 3, DB: 0) | 200 OK [http://localhost/calendars]
+
+
+Processing CalendarsController#new (for 127.0.0.1 at 2010-02-15 23:54:28) [GET]
+Rendering template within layouts/calendars
+Rendering calendars/new
+Rendered calendars/_form (6.0ms)
+Completed in 38ms (View: 28, DB: 0) | 200 OK [http://localhost/calendars/new]
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2010-02-15 23:54:36) [GET]
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY created_at DESC LIMIT 3[0m
+  [4;35;1mCalendar Load (1.0ms)[0m   [0mSELECT * FROM "calendars" [0m
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY created_at desc LIMIT 3[0m
+Rendering template within layouts/calendars
+Rendering calendars/index
+Completed in 21ms (View: 4, DB: 2) | 200 OK [http://localhost/calendars]
+
+
+Processing CalendarsController#new (for 127.0.0.1 at 2010-02-15 23:54:38) [GET]
+Rendering template within layouts/calendars
+Rendering calendars/new
+Rendered calendars/_form (2.0ms)
+Completed in 18ms (View: 8, DB: 0) | 200 OK [http://localhost/calendars/new]
+
+
+Processing CalendarsController#create (for 127.0.0.1 at 2010-02-15 23:55:07) [POST]
+  Parameters: {"calendar"=>{"title"=>"1st", "description"=>"123456789101234567891012345678910\r\n1234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910"}, "commit"=>"Create", "authenticity_token"=>"sgDJBcsMgYOxtNiKN0JBmG7aTzUJ2KZd+phvf5/xF98="}
+Rendering template within layouts/calendars
+Rendering calendars/new
+Rendered calendars/_form (3.0ms)
+Completed in 28ms (View: 14, DB: 0) | 200 OK [http://localhost/calendars]
+
+
+Processing CalendarsController#create (for 127.0.0.1 at 2010-02-15 23:55:15) [POST]
+  Parameters: {"calendar"=>{"title"=>"1st hlhlhlhlkh", "description"=>"123456789101234567891012345678910\r\n1234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910"}, "commit"=>"Create", "authenticity_token"=>"sgDJBcsMgYOxtNiKN0JBmG7aTzUJ2KZd+phvf5/xF98="}
+  [4;35;1mCalendar Create (1.0ms)[0m   [0mINSERT INTO "calendars" ("updated_at", "title", "description", "created_at") VALUES('2010-02-15 22:55:15', '1st hlhlhlhlkh', '123456789101234567891012345678910
+1234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910', '2010-02-15 22:55:15')[0m
+Redirected to http://localhost:3000/calendars/1
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/calendars]
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2010-02-15 23:55:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY created_at DESC LIMIT 3[0m
+  [4;35;1mCalendar Load (0.0ms)[0m   [0mSELECT * FROM "calendars" WHERE ("calendars"."id" = 1) [0m
+Rendering template within layouts/calendars
+Rendering calendars/show
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".calendar_id = 1) [0m
+Rendered events/_form (8.0ms)
+Completed in 43ms (View: 28, DB: 1) | 200 OK [http://localhost/calendars/1]
