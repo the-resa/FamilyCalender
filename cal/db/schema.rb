@@ -9,23 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100215221848) do
+ActiveRecord::Schema.define(:version => 20100216202017) do
 
   create_table "calendars", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "created_at"
   end
 
   create_table "events", :force => true do |t|
     t.integer  "calendar_id"
     t.string   "title"
     t.text     "description"
-    t.datetime "start_at"
-    t.datetime "stop_at"
-    t.datetime "created_at"
+    t.date     "start_on"
+    t.date     "stop_on"
     t.datetime "updated_at"
+    t.datetime "created_at"
   end
 
 end

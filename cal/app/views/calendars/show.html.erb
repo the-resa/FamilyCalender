@@ -1,21 +1,29 @@
-<h3>
-  <%=h @calendar.title %>
-</h3>
+<h2><%=h @calendar.title %></h2>
+<h3>Calendar: Details</h3>
 <p>
+  <i>Description:</i><br/>
   <%=h @calendar.description %>
 </p>
-<% #if session[:user_id] %>
-  <%= link_to 'Edit', edit_calendar_path(@calendar) %> |
-<% #end %>
+<p>
+  <i>Last Calender Update On:</i><br/>
+  <%=h @calendar.updated_at.strftime('%d.%m.%Y') %>
+</p>
+
+<h3>Calendar: Events</h3>
+<% if @calendar.events.empty? %>
+  <p>There are no events in this calender yet!</p>
+<% end %>
+<% unless @calendar.events.empty? %>
+  <% @calendar.events.each do |event| %>
+    <p><%=h event.title %>
+      <%=h event.start_on %>
+	</p>
+  <% end %>
+<% end %>
+
+<h3>Calendar: New Event</h3>
+<%= render :partial => @event = Event.new, :locals => { :button_name => 'Create'}%>
+
+<%= link_to 'Show Events', calendar_events_path(@calendar) %> |
+<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
 <%= link_to 'Back', calendars_path %>
-
-<br />
-
-
-<h3>Events</h3>
-  <%= render @calendar.events %>
-<br />
-
-
-<h3>Create new event</h3>
-<%= render 'events/form', :calendar => @calendar, :event => Event.new %>

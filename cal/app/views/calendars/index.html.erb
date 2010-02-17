@@ -1,38 +1,12 @@
 <h2>Listing calendars</h2>
-<% #if session[:user_id] %>
-  <%= link_to 'New calendar', new_calendar_path %>
-<% #end %>
 
 <% @calendars.each do |calendar| %>
-  <div>
-    <h3>
-      <%=h calendar.title %>
-    </h3>   
-    <p>
-      <%=h short(calendar.description) %>
-    </p>
-    <p>
-     <%= link_to 'More', calendar %> 
-       <% #if session[:user_id] %>
-         | <%= link_to 'Edit', edit_calendar_path(calendar) %> |
-         <%= link_to 'Destroy', calendar, :confirm => 'Are you sure?', :method => :delete %>
-	   <% #end %>
-     <br />
-     (<%= pluralize(calendar.events.count, "Event", "Events") %>)
-    </p>
-  </div><br />
+  <h3><%=h calendar.title %></h3> 
+  <p><%=h short(calendar.description) %></p>
+  <p>
+    <%= link_to 'Show Calender', calendar %> |
+    <%= link_to 'Edit', edit_calendar_path(calendar) %> |
+    <%= link_to 'Destroy', calendar, :confirm => 'Are you sure?', :method => :delete %>
+  </p>
+  (Calender has: <%= pluralize(calendar.events.count, "Event", "Events") %>)<br />
 <% end %>
-
-
-<div id="box">
-  <h2>Actual Events</h2>
-  <% @events.each  do |event| %>
-    <p id="content">
-	  <%= render :partial => 'events/event', :locals => { :event => event } %>
-      <%# link_to 'Show Event', calendar_path(event.calendar_id, :anchor => event.id) %>
-	  <span id="created">
-	    created on:(<%= event.created_at.strftime('%d.%m.%y %a, %H:%I:%S Uhr') %>)
-	  </span>
-	</p>
-  <% end %>
-</div>

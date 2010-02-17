@@ -1,19 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  calendar_id: 1
+  calendar: 
   title: MyString
   description: MyText
-  start_at: 2010-02-15 23:18:48
-  stop_at: 2010-02-15 23:18:48
-  created_at: 2010-02-15 23:18:48
-  updated_at: 2010-02-15 23:18:48
+  start_on: 2010-02-16
+  stop_on: 2010-02-16
+  updated_at: 2010-02-16 21:20:17
 
 two:
-  calendar_id: 1
+  calendar: 
   title: MyString
   description: MyText
-  start_at: 2010-02-15 23:18:48
-  stop_at: 2010-02-15 23:18:48
-  created_at: 2010-02-15 23:18:48
-  updated_at: 2010-02-15 23:18:48
+  start_on: 2010-02-16
+  stop_on: 2010-02-16
+  updated_at: 2010-02-16 21:20:17

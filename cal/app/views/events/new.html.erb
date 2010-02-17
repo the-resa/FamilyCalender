@@ -1,1 +1,7 @@
-<%= render 'events/form', :calendar => @calendar, :event => @event %>
+<h1>New event</h1>
+
+<%= error_messages_for :event %>
+
+<%= render :partial => @event, :locals => { :button_name => "Create"} %>
+
+<%= link_to 'Back', calendar_events_path(@calendar) %>

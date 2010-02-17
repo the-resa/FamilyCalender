@@ -8,19 +8,25 @@ body {
 
 body, p, ol, ul, td {
   font-family: arial, verdana, helvetica, sans-serif;
-  font-size:   13px;
+  font-size: 13px;
   line-height: 18px;
 }
 
+h1 {
+font-style: italic;
+width: 270px;
+}
+
 h2 {
+font-style: italic;
 margin-bottom: 20px;
-border-bottom:1px solid #70AB3F;
+border-bottom: 3px groove #70AB3F;
 letter-spacing: 0.2em;
 padding:3px;
 }
 
 h3 {
-border-bottom:1px solid #70AB3F;
+border-bottom:1px dotted #70AB3F;
 }
 
 pre {
@@ -30,7 +36,7 @@ pre {
 }
 
 a { 
-color:#70AB3F !important ; 
+color: #70AB3F; 
 }
 
 a:hover { 
@@ -48,16 +54,23 @@ margin: 0px 10px;
 }
 
 .title {
+color: #616263 !important;
 line-height: 60px;
-padding-right: 140px;
-color: white !important;
 text-decoration: none;
 letter-spacing: 0.2em;
 }
 
+#titlebox {
+border:3px groove #70AB3F;
+padding:10px;
+background: transparent url(../images/clock.jpg) no-repeat scroll 0 0;
+}
+
 #footer {
 font-style: italic !important;
-border-top: 3px groove #70AB3F !important;
+color: #616263;
+border: 3px groove #70AB3F;
+background: transparent url(../images/clock.jpg) no-repeat scroll 0 0;
 }
 
 #errorExplanation {
@@ -90,19 +103,12 @@ border-top: 3px groove #70AB3F !important;
   list-style: square;
 }
 
-#notice {
-font-weight:bold;
-font-size: 16px;
-color: red;
-}
-
 #created {
 font-family:"Courier New", Courier, monospace;
 font-style:italic;
 font-size:11px;
 }
 
-#box {
-border:1px solid #70AB3F;
-padding:10px;
+#notice {
+color: orange;
 }

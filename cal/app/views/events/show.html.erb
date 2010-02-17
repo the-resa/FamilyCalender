@@ -1,0 +1,29 @@
+<p>
+  <b>Calendar:</b>
+  <%= @event.calendar.title %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @event.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @event.description %>
+</p>
+
+<p>
+  <b>Start on:</b>
+  <%=h @event.start_on %>
+</p>
+
+<p>
+  <b>Stop on:</b>
+  <%=h @event.stop_on %>
+</p>
+
+
+
+<%= link_to 'Edit', [:edit, @calendar, @event] %> |
+<%= link_to 'Back', calendar_events_path(@calendar) %>

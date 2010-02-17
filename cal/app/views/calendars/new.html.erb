@@ -2,13 +2,6 @@
 
 <% form_for(@calendar) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= render 'form', :f => f %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+  <p><%= render 'form', :f => f %></p>
+  <p><%= f.submit 'Create' %></p>
 <% end %>
-
-<%= link_to 'Back', calendars_path %>

@@ -1,9 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :calendars do |calendar|
-    calendar.resources :events
-  end
   
-  map.root :controller => "calendars"
+  map.root :controller => 'calendars'
+  
+  map.resources :calendars, :has_many => :events
 
   # The priority is based upon order of creation: first created -> highest priority.
 

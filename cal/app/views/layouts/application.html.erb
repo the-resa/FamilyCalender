@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Many Calendars</title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+
+  <div id="titlebox">
+    <h1><%= link_to "Many Calendars", calendars_path, :class => 'title' %></h1>
+  </div>
+  
+  <p id="notice" ><%= flash[:notice] %></p>
+
+  <%= link_to 'Home', calendars_path %> |
+  <%= link_to 'Create new calendar', new_calendar_path %>
+  
+  <%= yield %>
+
+  <p id="footer">&copy;2010 by Theresa A. & Alexandra F.</p>
+
+</body>
+</html>

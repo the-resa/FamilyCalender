@@ -1,12 +1,8 @@
 class CalendarsController < ApplicationController
-  
-  before_filter :recent_events, :only => [ :index, :show]
-  
   # GET /calendars
   # GET /calendars.xml
   def index
     @calendars = Calendar.all
-	@events = Event.find(:all, :limit => 3, :order => 'created_at desc')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -86,9 +82,4 @@ class CalendarsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  def recent_events
-    @recent_events = Event.all(:order =>'created_at DESC', :limit => 3 )
-  end
-  
 end
