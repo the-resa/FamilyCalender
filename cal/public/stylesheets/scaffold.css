@@ -127,3 +127,9 @@ font-size:11px;
 #notice {
 color: orange;
 }
+
+td a{
+margin-left:5px;
+margin-right:5px;
+padding: 3px;
+}

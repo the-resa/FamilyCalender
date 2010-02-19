@@ -9,6 +9,9 @@
   <%=h @calendar.updated_at.strftime('%d.%m.%Y') %>
 </p>
 
+<% @id = @calendar.id %>
+<%= show_calendar :highlight_today => true, :dates => @hashArray[@id-1] %>
+
 <h3>Calendar: Events</h3>
 <% if @calendar.events.empty? %>
   <p>There are no events in this calender yet!</p>
@@ -20,7 +23,7 @@
       <%=h event.start_on.strftime('%d.%m.%Y') %>
 	</p>
 	<p>
-	  <%= link_to 'Show Event', calendar_events_path(@calendar) %> |
+	  <%= link_to 'Show Event', calendar_event_path(@calendar) %> |
 	  <%= link_to 'Edit Event', edit_calendar_path(@calendar) %> |
 	  <%= link_to 'Destroy Event', [@calendar, event], :confirm => 'Are you sure?', :method => :delete %>
 	</p><br/>

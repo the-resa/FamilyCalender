@@ -44,5 +44,15 @@ class ApplicationController < ActionController::Base
       session[:return_to] = nil
     end
 
+	def help
+      Helper.instance
+    end
+
+  class Helper
+    include Singleton
+	include ActionView::Helpers::UrlHelper
+	include ActionView::Helpers::TextHelper
+	include ActionView::Helpers::TagHelper
+  end
 end
  
