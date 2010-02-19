@@ -1,5 +1,5 @@
 <h2><%=h @calendar.title %></h2>
-<h3>Calendar: Details</h3>
+<h3>Details</h3>
 <p>
   <i>Description:</i><br/>
   <%=h @calendar.description %>
@@ -12,7 +12,7 @@
 <% @id = @calendar.id %>
 <%= show_calendar :highlight_today => true, :dates => @hashArray[@id-1] %>
 
-<h3>Calendar: Events</h3>
+<h3>Events</h3>
 <% if @calendar.events.empty? %>
   <p>There are no events in this calender yet!</p>
 <% end %>
@@ -30,5 +30,5 @@
   <% end %>
 <% end %>
 
-<h3>Calendar: New Event</h3>
+<h3>Create new event</h3>
 <%= render :partial => @event = Event.new, :locals => { :button_name => 'Create'}%>

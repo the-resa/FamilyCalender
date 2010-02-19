@@ -92,7 +92,7 @@ class CalendarsController < ApplicationController
     respond_to do |format|
       if @calendar.save
         flash[:notice] = 'Calendar was successfully created.'
-        format.html { redirect_to(@user) }
+        format.html { redirect_to(calendars_path) }
         format.xml  { render :xml => @calendar, :status => :created, :location => @calendar }
       else
         format.html { render :action => "new" }
@@ -125,7 +125,7 @@ class CalendarsController < ApplicationController
     @calendar.destroy
 
     respond_to do |format|
-      format.html { redirect_to(@user) }
+      format.html { redirect_to(calendars_path) }
       format.xml  { head :ok }
     end
   end
