@@ -1,6 +1,7 @@
 class CreateCalendars < ActiveRecord::Migration
   def self.up
     create_table :calendars do |t|
+	  t.references :user
       t.string :title
       t.text :description
       t.datetime :updated_at

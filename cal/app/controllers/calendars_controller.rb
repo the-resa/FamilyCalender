@@ -1,8 +1,14 @@
 class CalendarsController < ApplicationController
+  before_filter :authenticate
+  before_filter :load_user
+
   # GET /calendars
   # GET /calendars.xml
   def index
-    @calendars = Calendar.all
+    #@calendars = Calendar.all
+	@calendars = @user.calendars.paginate ( :page => params[:page], :order => 'created_at ASC', :per_page => 3)
+	@user_session = params[:user_session]
+	@count = @user.calendars.count
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,12 +46,12 @@ class CalendarsController < ApplicationController
   # POST /calendars
   # POST /calendars.xml
   def create
-    @calendar = Calendar.new(params[:calendar])
+	@calendar = @user.calendars.build(params[:calendar])
 
     respond_to do |format|
       if @calendar.save
         flash[:notice] = 'Calendar was successfully created.'
-        format.html { redirect_to(@calendar) }
+        format.html { redirect_to(@user) }
         format.xml  { render :xml => @calendar, :status => :created, :location => @calendar }
       else
         format.html { render :action => "new" }
@@ -62,7 +68,7 @@ class CalendarsController < ApplicationController
     respond_to do |format|
       if @calendar.update_attributes(params[:calendar])
         flash[:notice] = 'Calendar was successfully updated.'
-        format.html { redirect_to(@calendar) }
+        format.html { redirect_to(@user.calendar) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,8 +84,19 @@ class CalendarsController < ApplicationController
     @calendar.destroy
 
     respond_to do |format|
-      format.html { redirect_to(calendars_url) }
+      format.html { redirect_to(@user) }
       format.xml  { head :ok }
     end
   end
+  
+  def authenticate
+	unless current_user
+	  redirect_to account_url
+	end
+  end
+  
+  def load_user
+    @user = @current_user
+  end
+  
 end

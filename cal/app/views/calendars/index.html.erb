@@ -1,12 +1,19 @@
-<h2>Listing calendars</h2>
+<h2>Your calendars</h2>
 
-<% @calendars.each do |calendar| %>
+<div class = "box">
+  <%= will_paginate @calendars, :prev_label => "<<< previous ", :next_label => " next >>>" %>
+</div>
+
+<p>You have currently <%= pluralize(@count, "Calendar", "Calendars") %>.</p><br />
+
+
+<% for calendar in @calendars %>
   <h3><%=h calendar.title %></h3> 
   <p><%=h short(calendar.description) %></p>
   <p>
     <%= link_to 'Show Calender', calendar %> |
-    <%= link_to 'Edit', edit_calendar_path(calendar) %> |
-    <%= link_to 'Destroy', calendar, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to 'Edit Calendar', edit_calendar_path(calendar) %> |
+    <%= link_to 'Destroy Calendar', calendar, :confirm => 'Are you sure?', :method => :delete %>
   </p>
-  (Calender has: <%= pluralize(calendar.events.count, "Event", "Events") %>)<br />
+  (Calender has: <%= pluralize(calendar.events.count, "Event", "Events") %>)<br /><br />
 <% end %>

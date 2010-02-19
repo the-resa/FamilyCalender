@@ -1,8 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => 'user_sessions', :action => 'new' 
   
-  map.root :controller => 'calendars'
+  map.resources :calendars, :has_many => :events  
+  map.resource :account, :controller => 'users'
+  map.resources :users
+  map.resource :user_session
   
-  map.resources :calendars, :has_many => :events
 
   # The priority is based upon order of creation: first created -> highest priority.
 

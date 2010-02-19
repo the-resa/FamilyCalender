@@ -85,8 +85,9 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-	  format.html { redirect_to(calendar_events_path(@calendar)) }
+	  #format.html { redirect_to(calendar_events_path(@calendar)) }
       #format.html { redirect_to(events_url) }
+	  format.html { redirect_to(@calendar) }
       format.xml  { head :ok }
     end
   end

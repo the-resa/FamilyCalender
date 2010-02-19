@@ -60,17 +60,32 @@ text-decoration: none;
 letter-spacing: 0.2em;
 }
 
+.box {
+border:1px dotted white;
+margin-bottom: 30px;
+}
+
 #titlebox {
 border:3px groove #70AB3F;
 padding:10px;
 background: transparent url(../images/clock.jpg) no-repeat scroll 0 0;
 }
 
+#current {
+text-align: right;
+border-top:1px dotted white;
+width: 600px;
+margin-top: 30px;
+padding-top: 10px;
+}
+
 #footer {
 font-style: italic !important;
+font-weight: bold;
 color: #616263;
 border: 3px groove #70AB3F;
 background: transparent url(../images/clock.jpg) no-repeat scroll 0 0;
+padding-left: 10px;
 }
 
 #errorExplanation {
