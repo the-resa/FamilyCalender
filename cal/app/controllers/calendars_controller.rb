@@ -47,7 +47,9 @@ class CalendarsController < ApplicationController
 		     y = (help.link_to events2[j].title, calendar_event_path(:calendar_id => (events2[j].calendar_id), :id => events2[j].id)) 
 	         hashN = {(events2[j].start_on.day) => (x + y)} # merge events 
 	       else 
-		     hashN = {(events2[j].start_on.day) => (help.link_to events2[j].title, calendar_event_path(:calendar_id => (events2[j].calendar_id), :id => events2[j].id))}
+		     input = events2[j].title
+			 input = input.gsub( /[<>(){}\/\\]/,'')
+		     hashN = {(events2[j].start_on.day) => (help.link_to input, calendar_event_path(:calendar_id => (events2[j].calendar_id), :id => events2[j].id))}
 	       end
 	       hashH.merge!(hashN)
 		 else
