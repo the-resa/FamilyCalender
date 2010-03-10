@@ -6,7 +6,7 @@ class CalendarsController < ApplicationController
   # GET /calendars.xml
   def index
     #@calendars = Calendar.all
-	@calendars = @user.calendars.paginate ( :page => params[:page], :order => 'created_at ASC', :per_page => 3)
+	@calendars = @user.calendars.paginate(:page => params[:page],:order => 'created_at ASC', :per_page => 3)
 	@user_session = params[:user_session]
 	@count = @user.calendars.count
 
