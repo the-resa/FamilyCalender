@@ -2,6 +2,6 @@ config/database.yml
 coverage/*
 db/*.sqlite3
 doc/*
-log/*.log
+log/*
 *.swp
 tmp/*
