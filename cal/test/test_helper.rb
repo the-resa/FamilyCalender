@@ -38,3 +38,9 @@ class ActiveSupport::TestCase
 end
 
 require File.dirname(__FILE__) + '/blueprints'
+
+require 'webrat'
+
+Webrat.configure do |config|
+  config.mode = :rails
+end
