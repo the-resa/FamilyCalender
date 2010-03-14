@@ -11,6 +11,7 @@ class CalendarsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
+  
 
   test "should create calendar" do
     assert_difference('Calendar.count') do
@@ -42,4 +43,6 @@ class CalendarsControllerTest < ActionController::TestCase
 
     assert_redirected_to calendars_path
   end
+  
+
 end
