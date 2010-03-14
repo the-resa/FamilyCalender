@@ -29,3 +29,6 @@ config.action_mailer.delivery_method = :test
 
 config.gem 'machinist'
 config.gem 'faker'
+config.gem 'webrat'
+config.gem 'shoulda'
+config.gem 'rcov'
