@@ -1,8 +1,7 @@
 config/database.yml
 coverage/*
 db/*.sqlite3
-doc/api
-doc/app
+doc/*
 log/*
 *.swp
 tmp/*
