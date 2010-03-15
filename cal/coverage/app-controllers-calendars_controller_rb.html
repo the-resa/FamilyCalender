@@ -553,7 +553,7 @@ span.run100 {
 </style>
     </head>
   <body><h3>C0 code coverage information</h3>
-    <p>Generated on Sun Mar 14 16:38:35 +0100 2010 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
+    <p>Generated on Mon Mar 15 02:12:28 +0100 2010 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
       </p>
     <hr/>
     <pre><span class='marked0'>Code reported as executed by Ruby looks like this...
@@ -575,20 +575,20 @@ span.run100 {
         </td>
       <td class='lines_code'><tt>107</tt>
         </td>
-      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_total'>23.8%</tt>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_total'>74.1%</tt>
               &nbsp;</td>
-            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='24'/>
-                  <td class='uncovered' width='76'/>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='74'/>
+                  <td class='uncovered' width='26'/>
                   </tr>
                 </table>
               </td>
             </tr>
           </table>
         </td>
-      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_code'>11.2%</tt>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_code'>65.4%</tt>
               &nbsp;</td>
-            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='11'/>
-                  <td class='uncovered' width='89'/>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='65'/>
+                  <td class='uncovered' width='35'/>
                   </tr>
                 </table>
               </td>
@@ -605,36 +605,36 @@ span.run100 {
 </span><span class="inferred0"><a name="line5"></a>  5   # GET /calendars
 </span><span class="inferred1"><a name="line6"></a>  6   # GET /calendars.xml
 </span><span class="marked0"><a name="line7"></a>  7   def index
-</span><span class="uncovered1"><a name="line8"></a>  8     #@calendars = Calendar.all
-</span><span class="uncovered0"><a name="line9"></a>  9 	@calendars = @user.calendars.paginate(:page =&gt; params[:page],:order =&gt; 'created_at ASC', :per_page =&gt; 3)
-</span><span class="uncovered1"><a name="line10"></a> 10 	@user_session = params[:user_session]
-</span><span class="uncovered0"><a name="line11"></a> 11 	@count = @user.calendars.count
-</span><span class="uncovered1"><a name="line12"></a> 12 
-</span><span class="uncovered0"><a name="line13"></a> 13     respond_to do |format|
-</span><span class="uncovered1"><a name="line14"></a> 14       format.html # index.html.erb
-</span><span class="uncovered0"><a name="line15"></a> 15       format.xml  { render :xml =&gt; @calendars }
-</span><span class="uncovered1"><a name="line16"></a> 16     end
-</span><span class="uncovered0"><a name="line17"></a> 17   end
+</span><span class="inferred1"><a name="line8"></a>  8     #@calendars = Calendar.all
+</span><span class="marked0"><a name="line9"></a>  9 	@calendars = @user.calendars.paginate(:page =&gt; params[:page],:order =&gt; 'created_at ASC', :per_page =&gt; 3)
+</span><span class="marked1"><a name="line10"></a> 10 	@user_session = params[:user_session]
+</span><span class="marked0"><a name="line11"></a> 11 	@count = @user.calendars.count
+</span><span class="inferred1"><a name="line12"></a> 12 
+</span><span class="marked0"><a name="line13"></a> 13     respond_to do |format|
+</span><span class="marked1"><a name="line14"></a> 14       format.html # index.html.erb
+</span><span class="marked0"><a name="line15"></a> 15       format.xml  { render :xml =&gt; @calendars }
+</span><span class="inferred1"><a name="line16"></a> 16     end
+</span><span class="inferred0"><a name="line17"></a> 17   end
 </span><span class="inferred1"><a name="line18"></a> 18 
 </span><span class="inferred0"><a name="line19"></a> 19   # GET /calendars/1
 </span><span class="inferred1"><a name="line20"></a> 20   # GET /calendars/1.xml
 </span><span class="marked0"><a name="line21"></a> 21   def show
-</span><span class="uncovered1"><a name="line22"></a> 22     @calendar = Calendar.find(params[:id])
-</span><span class="uncovered0"><a name="line23"></a> 23 	
-</span><span class="uncovered1"><a name="line24"></a> 24 	calendarWithMaxId = Calendar.find(:last, :select =&gt; &quot;id&quot;)
-</span><span class="uncovered0"><a name="line25"></a> 25 	calendarMaxId = calendarWithMaxId.id
-</span><span class="uncovered1"><a name="line26"></a> 26 	@hashArray = Array.new()
-</span><span class="uncovered0"><a name="line27"></a> 27 	t = Time.now
-</span><span class="uncovered1"><a name="line28"></a> 28 
-</span><span class="uncovered0"><a name="line29"></a> 29 	1.upto(calendarMaxId) do |o|
-</span><span class="uncovered1"><a name="line30"></a> 30 	
-</span><span class="uncovered0"><a name="line31"></a> 31       events1 = Event.find(:all, :select =&gt; &quot;title&quot;, :conditions =&gt; [&quot;calendar_id = ?&quot;, o])
-</span><span class="uncovered1"><a name="line32"></a> 32       events2 = Event.find(:all, :select =&gt; &quot;title, description, start_on, calendar_id, id&quot;, :conditions =&gt; [&quot;calendar_id = ?&quot;, o])
-</span><span class="uncovered0"><a name="line33"></a> 33 
-</span><span class="uncovered1"><a name="line34"></a> 34 	  hashH = Hash.new() # Main Hash
-</span><span class="uncovered0"><a name="line35"></a> 35 	
-</span><span class="uncovered1"><a name="line36"></a> 36 	  if events1.empty? # calendar number ... has no events
-</span><span class="uncovered0"><a name="line37"></a> 37 	    @hashArray.push(hashH) # push empty Hash
+</span><span class="marked1"><a name="line22"></a> 22     @calendar = Calendar.find(params[:id])
+</span><span class="inferred0"><a name="line23"></a> 23 	
+</span><span class="marked1"><a name="line24"></a> 24 	calendarWithMaxId = Calendar.find(:last, :select =&gt; &quot;id&quot;)
+</span><span class="marked0"><a name="line25"></a> 25 	calendarMaxId = calendarWithMaxId.id
+</span><span class="marked1"><a name="line26"></a> 26 	@hashArray = Array.new()
+</span><span class="marked0"><a name="line27"></a> 27 	t = Time.now
+</span><span class="inferred1"><a name="line28"></a> 28 
+</span><span class="marked0"><a name="line29"></a> 29 	1.upto(calendarMaxId) do |o|
+</span><span class="inferred1"><a name="line30"></a> 30 	
+</span><span class="marked0"><a name="line31"></a> 31       events1 = Event.find(:all, :select =&gt; &quot;title&quot;, :conditions =&gt; [&quot;calendar_id = ?&quot;, o])
+</span><span class="marked1"><a name="line32"></a> 32       events2 = Event.find(:all, :select =&gt; &quot;title, description, start_on, calendar_id, id&quot;, :conditions =&gt; [&quot;calendar_id = ?&quot;, o])
+</span><span class="inferred0"><a name="line33"></a> 33 
+</span><span class="marked1"><a name="line34"></a> 34 	  hashH = Hash.new() # Main Hash
+</span><span class="inferred0"><a name="line35"></a> 35 	
+</span><span class="marked1"><a name="line36"></a> 36 	  if events1.empty? # calendar number ... has no events
+</span><span class="marked0"><a name="line37"></a> 37 	    @hashArray.push(hashH) # push empty Hash
 </span><span class="uncovered1"><a name="line38"></a> 38 	  else
 </span><span class="uncovered0"><a name="line39"></a> 39 	    j = 0
 </span><span class="uncovered1"><a name="line40"></a> 40         loop{
@@ -654,46 +654,46 @@ span.run100 {
 </span><span class="uncovered1"><a name="line54"></a> 54 	       hashH.merge!(hashN)
 </span><span class="uncovered0"><a name="line55"></a> 55 		 else
 </span><span class="uncovered1"><a name="line56"></a> 56 	     end
-</span><span class="uncovered0"><a name="line57"></a> 57 	    
+</span><span class="inferred0"><a name="line57"></a> 57 	    
 </span><span class="uncovered1"><a name="line58"></a> 58 	     j+=1
 </span><span class="uncovered0"><a name="line59"></a> 59 	     break if j == events1.size
 </span><span class="uncovered1"><a name="line60"></a> 60         } 
 </span><span class="uncovered0"><a name="line61"></a> 61 	    @hashArray.push(hashH)
 </span><span class="uncovered1"><a name="line62"></a> 62 	  end	 
 </span><span class="uncovered0"><a name="line63"></a> 63     end
-</span><span class="uncovered1"><a name="line64"></a> 64 
-</span><span class="uncovered0"><a name="line65"></a> 65     respond_to do |format|
-</span><span class="uncovered1"><a name="line66"></a> 66       format.html # show.html.erb
-</span><span class="uncovered0"><a name="line67"></a> 67       format.xml  { render :xml =&gt; @calendar }
-</span><span class="uncovered1"><a name="line68"></a> 68     end
-</span><span class="uncovered0"><a name="line69"></a> 69   end
+</span><span class="inferred1"><a name="line64"></a> 64 
+</span><span class="marked0"><a name="line65"></a> 65     respond_to do |format|
+</span><span class="marked1"><a name="line66"></a> 66       format.html # show.html.erb
+</span><span class="marked0"><a name="line67"></a> 67       format.xml  { render :xml =&gt; @calendar }
+</span><span class="inferred1"><a name="line68"></a> 68     end
+</span><span class="inferred0"><a name="line69"></a> 69   end
 </span><span class="inferred1"><a name="line70"></a> 70 
 </span><span class="inferred0"><a name="line71"></a> 71   # GET /calendars/new
 </span><span class="inferred1"><a name="line72"></a> 72   # GET /calendars/new.xml
 </span><span class="marked0"><a name="line73"></a> 73   def new
-</span><span class="uncovered1"><a name="line74"></a> 74     @calendar = Calendar.new
-</span><span class="uncovered0"><a name="line75"></a> 75 
-</span><span class="uncovered1"><a name="line76"></a> 76     respond_to do |format|
-</span><span class="uncovered0"><a name="line77"></a> 77       format.html # new.html.erb
-</span><span class="uncovered1"><a name="line78"></a> 78       format.xml  { render :xml =&gt; @calendar }
-</span><span class="uncovered0"><a name="line79"></a> 79     end
-</span><span class="uncovered1"><a name="line80"></a> 80   end
+</span><span class="marked1"><a name="line74"></a> 74     @calendar = Calendar.new
+</span><span class="inferred0"><a name="line75"></a> 75 
+</span><span class="marked1"><a name="line76"></a> 76     respond_to do |format|
+</span><span class="marked0"><a name="line77"></a> 77       format.html # new.html.erb
+</span><span class="marked1"><a name="line78"></a> 78       format.xml  { render :xml =&gt; @calendar }
+</span><span class="inferred0"><a name="line79"></a> 79     end
+</span><span class="inferred1"><a name="line80"></a> 80   end
 </span><span class="inferred0"><a name="line81"></a> 81 
 </span><span class="inferred1"><a name="line82"></a> 82   # GET /calendars/1/edit
 </span><span class="marked0"><a name="line83"></a> 83   def edit
-</span><span class="uncovered1"><a name="line84"></a> 84     @calendar = Calendar.find(params[:id])
-</span><span class="uncovered0"><a name="line85"></a> 85   end
+</span><span class="marked1"><a name="line84"></a> 84     @calendar = Calendar.find(params[:id])
+</span><span class="marked0"><a name="line85"></a> 85   end
 </span><span class="inferred1"><a name="line86"></a> 86 
 </span><span class="inferred0"><a name="line87"></a> 87   # POST /calendars
 </span><span class="inferred1"><a name="line88"></a> 88   # POST /calendars.xml
 </span><span class="marked0"><a name="line89"></a> 89   def create
-</span><span class="uncovered1"><a name="line90"></a> 90 	@calendar = @user.calendars.build(params[:calendar])
-</span><span class="uncovered0"><a name="line91"></a> 91 
-</span><span class="uncovered1"><a name="line92"></a> 92     respond_to do |format|
-</span><span class="uncovered0"><a name="line93"></a> 93       if @calendar.save
-</span><span class="uncovered1"><a name="line94"></a> 94         flash[:notice] = 'Calendar was successfully created.'
-</span><span class="uncovered0"><a name="line95"></a> 95         format.html { redirect_to(calendars_path) }
-</span><span class="uncovered1"><a name="line96"></a> 96         format.xml  { render :xml =&gt; @calendar, :status =&gt; :created, :location =&gt; @calendar }
+</span><span class="marked1"><a name="line90"></a> 90 	@calendar = @user.calendars.build(params[:calendar])
+</span><span class="inferred0"><a name="line91"></a> 91 
+</span><span class="marked1"><a name="line92"></a> 92     respond_to do |format|
+</span><span class="marked0"><a name="line93"></a> 93       if @calendar.save
+</span><span class="marked1"><a name="line94"></a> 94         flash[:notice] = 'Calendar was successfully created.'
+</span><span class="marked0"><a name="line95"></a> 95         format.html { redirect_to(calendars_path) }
+</span><span class="marked1"><a name="line96"></a> 96         format.xml  { render :xml =&gt; @calendar, :status =&gt; :created, :location =&gt; @calendar }
 </span><span class="uncovered0"><a name="line97"></a> 97       else
 </span><span class="uncovered1"><a name="line98"></a> 98         format.html { render :action =&gt; &quot;new&quot; }
 </span><span class="uncovered0"><a name="line99"></a> 99         format.xml  { render :xml =&gt; @calendar.errors, :status =&gt; :unprocessable_entity }
@@ -704,13 +704,13 @@ span.run100 {
 </span><span class="inferred1"><a name="line104"></a>104   # PUT /calendars/1
 </span><span class="inferred0"><a name="line105"></a>105   # PUT /calendars/1.xml
 </span><span class="marked1"><a name="line106"></a>106   def update
-</span><span class="uncovered0"><a name="line107"></a>107     @calendar = Calendar.find(params[:id])
-</span><span class="uncovered1"><a name="line108"></a>108 
-</span><span class="uncovered0"><a name="line109"></a>109     respond_to do |format|
-</span><span class="uncovered1"><a name="line110"></a>110       if @calendar.update_attributes(params[:calendar])
-</span><span class="uncovered0"><a name="line111"></a>111         flash[:notice] = 'Calendar was successfully updated.'
-</span><span class="uncovered1"><a name="line112"></a>112         format.html { redirect_to(@calendar) }
-</span><span class="uncovered0"><a name="line113"></a>113         format.xml  { head :ok }
+</span><span class="marked0"><a name="line107"></a>107     @calendar = Calendar.find(params[:id])
+</span><span class="inferred1"><a name="line108"></a>108 
+</span><span class="marked0"><a name="line109"></a>109     respond_to do |format|
+</span><span class="marked1"><a name="line110"></a>110       if @calendar.update_attributes(params[:calendar])
+</span><span class="marked0"><a name="line111"></a>111         flash[:notice] = 'Calendar was successfully updated.'
+</span><span class="marked1"><a name="line112"></a>112         format.html { redirect_to(@calendar) }
+</span><span class="marked0"><a name="line113"></a>113         format.xml  { head :ok }
 </span><span class="uncovered1"><a name="line114"></a>114       else
 </span><span class="uncovered0"><a name="line115"></a>115         format.html { render :action =&gt; &quot;edit&quot; }
 </span><span class="uncovered1"><a name="line116"></a>116         format.xml  { render :xml =&gt; @calendar.errors, :status =&gt; :unprocessable_entity }
@@ -721,26 +721,26 @@ span.run100 {
 </span><span class="inferred0"><a name="line121"></a>121   # DELETE /calendars/1
 </span><span class="inferred1"><a name="line122"></a>122   # DELETE /calendars/1.xml
 </span><span class="marked0"><a name="line123"></a>123   def destroy
-</span><span class="uncovered1"><a name="line124"></a>124     @calendar = Calendar.find(params[:id])
-</span><span class="uncovered0"><a name="line125"></a>125     @calendar.destroy
-</span><span class="uncovered1"><a name="line126"></a>126 
-</span><span class="uncovered0"><a name="line127"></a>127     respond_to do |format|
-</span><span class="uncovered1"><a name="line128"></a>128       format.html { redirect_to(calendars_path) }
-</span><span class="uncovered0"><a name="line129"></a>129       format.xml  { head :ok }
-</span><span class="uncovered1"><a name="line130"></a>130     end
-</span><span class="uncovered0"><a name="line131"></a>131   end
+</span><span class="marked1"><a name="line124"></a>124     @calendar = Calendar.find(params[:id])
+</span><span class="marked0"><a name="line125"></a>125     @calendar.destroy
+</span><span class="inferred1"><a name="line126"></a>126 
+</span><span class="marked0"><a name="line127"></a>127     respond_to do |format|
+</span><span class="marked1"><a name="line128"></a>128       format.html { redirect_to(calendars_path) }
+</span><span class="marked0"><a name="line129"></a>129       format.xml  { head :ok }
+</span><span class="inferred1"><a name="line130"></a>130     end
+</span><span class="inferred0"><a name="line131"></a>131   end
 </span><span class="inferred1"><a name="line132"></a>132   
 </span><span class="marked0"><a name="line133"></a>133   def authenticate
-</span><span class="uncovered1"><a name="line134"></a>134 	unless current_user
-</span><span class="uncovered0"><a name="line135"></a>135 	  redirect_to account_url
-</span><span class="uncovered1"><a name="line136"></a>136 	end
-</span><span class="uncovered0"><a name="line137"></a>137   end
+</span><span class="marked1"><a name="line134"></a>134 	unless current_user
+</span><span class="marked0"><a name="line135"></a>135 	  redirect_to account_url
+</span><span class="inferred1"><a name="line136"></a>136 	end
+</span><span class="marked0"><a name="line137"></a>137   end
 </span><span class="inferred1"><a name="line138"></a>138   
 </span><span class="marked0"><a name="line139"></a>139   def load_user
-</span><span class="uncovered1"><a name="line140"></a>140     @user = @current_user
-</span><span class="uncovered0"><a name="line141"></a>141   end
-</span><span class="uncovered1"><a name="line142"></a>142   
-</span><span class="uncovered0"><a name="line143"></a>143 end
+</span><span class="marked1"><a name="line140"></a>140     @user = @current_user
+</span><span class="marked0"><a name="line141"></a>141   end
+</span><span class="inferred1"><a name="line142"></a>142   
+</span><span class="inferred0"><a name="line143"></a>143 end
 </span></pre><hr/>
     <p>Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'>rcov code coverage analysis tool for Ruby</a>
    version 0.8.1.2.</p>

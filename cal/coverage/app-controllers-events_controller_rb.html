@@ -553,7 +553,7 @@ span.run100 {
 </style>
     </head>
   <body><h3>C0 code coverage information</h3>
-    <p>Generated on Sun Mar 14 16:38:35 +0100 2010 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
+    <p>Generated on Mon Mar 15 02:12:28 +0100 2010 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
       </p>
     <hr/>
     <pre><span class='marked0'>Code reported as executed by Ruby looks like this...
@@ -575,20 +575,20 @@ span.run100 {
         </td>
       <td class='lines_code'><tt>65</tt>
         </td>
-      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_total'>31.0%</tt>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_total'>82.0%</tt>
               &nbsp;</td>
-            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='31'/>
-                  <td class='uncovered' width='69'/>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='82'/>
+                  <td class='uncovered' width='18'/>
                   </tr>
                 </table>
               </td>
             </tr>
           </table>
         </td>
-      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_code'>15.4%</tt>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_code'>72.3%</tt>
               &nbsp;</td>
-            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='15'/>
-                  <td class='uncovered' width='85'/>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='72'/>
+                  <td class='uncovered' width='28'/>
                   </tr>
                 </table>
               </td>
@@ -604,20 +604,20 @@ span.run100 {
 </span><span class="inferred0"><a name="line4"></a>  4   # GET /events
 </span><span class="inferred1"><a name="line5"></a>  5   # GET /events.xml
 </span><span class="marked0"><a name="line6"></a>  6   def index
-</span><span class="uncovered1"><a name="line7"></a>  7     #@events = Event.all
-</span><span class="uncovered0"><a name="line8"></a>  8 	@events = @calendar.events.paginate(:page =&gt; params[:page],:order =&gt; 'created_at ASC', :per_page =&gt; 3)
-</span><span class="uncovered1"><a name="line9"></a>  9 
-</span><span class="uncovered0"><a name="line10"></a> 10     respond_to do |format|
-</span><span class="uncovered1"><a name="line11"></a> 11       format.html # index.html.erb
-</span><span class="uncovered0"><a name="line12"></a> 12       format.xml  { render :xml =&gt; @events }
-</span><span class="uncovered1"><a name="line13"></a> 13     end
-</span><span class="uncovered0"><a name="line14"></a> 14   end
+</span><span class="inferred1"><a name="line7"></a>  7     #@events = Event.all
+</span><span class="marked0"><a name="line8"></a>  8 	@events = @calendar.events.paginate(:page =&gt; params[:page],:order =&gt; 'created_at ASC', :per_page =&gt; 3)
+</span><span class="inferred1"><a name="line9"></a>  9 
+</span><span class="marked0"><a name="line10"></a> 10     respond_to do |format|
+</span><span class="marked1"><a name="line11"></a> 11       format.html # index.html.erb
+</span><span class="marked0"><a name="line12"></a> 12       format.xml  { render :xml =&gt; @events }
+</span><span class="inferred1"><a name="line13"></a> 13     end
+</span><span class="inferred0"><a name="line14"></a> 14   end
 </span><span class="inferred1"><a name="line15"></a> 15 
 </span><span class="inferred0"><a name="line16"></a> 16   # GET /events/1
 </span><span class="inferred1"><a name="line17"></a> 17   # GET /events/1.xml
 </span><span class="marked0"><a name="line18"></a> 18   def show
 </span><span class="uncovered1"><a name="line19"></a> 19     @event = Event.find(params[:id])
-</span><span class="uncovered0"><a name="line20"></a> 20 
+</span><span class="inferred0"><a name="line20"></a> 20 
 </span><span class="uncovered1"><a name="line21"></a> 21     respond_to do |format|
 </span><span class="uncovered0"><a name="line22"></a> 22       format.html # show.html.erb
 </span><span class="uncovered1"><a name="line23"></a> 23       format.xml  { render :xml =&gt; @event }
@@ -627,34 +627,34 @@ span.run100 {
 </span><span class="inferred1"><a name="line27"></a> 27   # GET /events/new
 </span><span class="inferred0"><a name="line28"></a> 28   # GET /events/new.xml
 </span><span class="marked1"><a name="line29"></a> 29   def new
-</span><span class="uncovered0"><a name="line30"></a> 30     @event = Event.new
-</span><span class="uncovered1"><a name="line31"></a> 31 
-</span><span class="uncovered0"><a name="line32"></a> 32     respond_to do |format|
-</span><span class="uncovered1"><a name="line33"></a> 33       format.html # new.html.erb
-</span><span class="uncovered0"><a name="line34"></a> 34       format.xml  { render :xml =&gt; @event }
-</span><span class="uncovered1"><a name="line35"></a> 35     end
-</span><span class="uncovered0"><a name="line36"></a> 36   end
+</span><span class="marked0"><a name="line30"></a> 30     @event = Event.new
+</span><span class="inferred1"><a name="line31"></a> 31 
+</span><span class="marked0"><a name="line32"></a> 32     respond_to do |format|
+</span><span class="marked1"><a name="line33"></a> 33       format.html # new.html.erb
+</span><span class="marked0"><a name="line34"></a> 34       format.xml  { render :xml =&gt; @event }
+</span><span class="inferred1"><a name="line35"></a> 35     end
+</span><span class="inferred0"><a name="line36"></a> 36   end
 </span><span class="inferred1"><a name="line37"></a> 37 
 </span><span class="inferred0"><a name="line38"></a> 38   # GET /events/1/edit
 </span><span class="marked1"><a name="line39"></a> 39   def edit
-</span><span class="uncovered0"><a name="line40"></a> 40     @event = Event.find(params[:id])
-</span><span class="uncovered1"><a name="line41"></a> 41   end
+</span><span class="marked0"><a name="line40"></a> 40     @event = Event.find(params[:id])
+</span><span class="marked1"><a name="line41"></a> 41   end
 </span><span class="inferred0"><a name="line42"></a> 42 
 </span><span class="inferred1"><a name="line43"></a> 43   # POST /events
 </span><span class="inferred0"><a name="line44"></a> 44   # POST /events.xml
 </span><span class="marked1"><a name="line45"></a> 45   def create
-</span><span class="uncovered0"><a name="line46"></a> 46     @calendar = Calendar.find(params[:calendar_id])
-</span><span class="uncovered1"><a name="line47"></a> 47 	@event = @calendar.events.build(params[:event])
-</span><span class="uncovered0"><a name="line48"></a> 48   
-</span><span class="uncovered1"><a name="line49"></a> 49     #@event = Event.new(params[:event])
-</span><span class="uncovered0"><a name="line50"></a> 50 
-</span><span class="uncovered1"><a name="line51"></a> 51     respond_to do |format|
-</span><span class="uncovered0"><a name="line52"></a> 52       if @event.save
-</span><span class="uncovered1"><a name="line53"></a> 53         flash[:notice] = 'Event was successfully created.'
-</span><span class="uncovered0"><a name="line54"></a> 54         # original redirect: format.html { redirect_to(@event) }
-</span><span class="uncovered1"><a name="line55"></a> 55 		# modified for extra view: format.html { redirect_to([@calendar, @event]) }
-</span><span class="uncovered0"><a name="line56"></a> 56 		format.html { redirect_to(@calendar) }
-</span><span class="uncovered1"><a name="line57"></a> 57         format.xml  { render :xml =&gt; @event, :status =&gt; :created, :location =&gt; @event }
+</span><span class="marked0"><a name="line46"></a> 46     @calendar = Calendar.find(params[:calendar_id])
+</span><span class="marked1"><a name="line47"></a> 47 	@event = @calendar.events.build(params[:event])
+</span><span class="inferred0"><a name="line48"></a> 48   
+</span><span class="inferred1"><a name="line49"></a> 49     #@event = Event.new(params[:event])
+</span><span class="inferred0"><a name="line50"></a> 50 
+</span><span class="marked1"><a name="line51"></a> 51     respond_to do |format|
+</span><span class="marked0"><a name="line52"></a> 52       if @event.save
+</span><span class="marked1"><a name="line53"></a> 53         flash[:notice] = 'Event was successfully created.'
+</span><span class="inferred0"><a name="line54"></a> 54         # original redirect: format.html { redirect_to(@event) }
+</span><span class="inferred1"><a name="line55"></a> 55 		# modified for extra view: format.html { redirect_to([@calendar, @event]) }
+</span><span class="marked0"><a name="line56"></a> 56 		format.html { redirect_to(@calendar) }
+</span><span class="marked1"><a name="line57"></a> 57         format.xml  { render :xml =&gt; @event, :status =&gt; :created, :location =&gt; @event }
 </span><span class="uncovered0"><a name="line58"></a> 58       else
 </span><span class="uncovered1"><a name="line59"></a> 59         format.html { render :action =&gt; &quot;new&quot; }
 </span><span class="uncovered0"><a name="line60"></a> 60         format.xml  { render :xml =&gt; @event.errors, :status =&gt; :unprocessable_entity }
@@ -665,13 +665,13 @@ span.run100 {
 </span><span class="inferred1"><a name="line65"></a> 65   # PUT /events/1
 </span><span class="inferred0"><a name="line66"></a> 66   # PUT /events/1.xml
 </span><span class="marked1"><a name="line67"></a> 67   def update
-</span><span class="uncovered0"><a name="line68"></a> 68     @event = Event.find(params[:id])
-</span><span class="uncovered1"><a name="line69"></a> 69 
-</span><span class="uncovered0"><a name="line70"></a> 70     respond_to do |format|
-</span><span class="uncovered1"><a name="line71"></a> 71       if @event.update_attributes(params[:event])
-</span><span class="uncovered0"><a name="line72"></a> 72         flash[:notice] = 'Event was successfully updated.'
-</span><span class="uncovered1"><a name="line73"></a> 73         format.html { redirect_to([@calendar, @event]) }
-</span><span class="uncovered0"><a name="line74"></a> 74         format.xml  { head :ok }
+</span><span class="marked0"><a name="line68"></a> 68     @event = Event.find(params[:id])
+</span><span class="inferred1"><a name="line69"></a> 69 
+</span><span class="marked0"><a name="line70"></a> 70     respond_to do |format|
+</span><span class="marked1"><a name="line71"></a> 71       if @event.update_attributes(params[:event])
+</span><span class="marked0"><a name="line72"></a> 72         flash[:notice] = 'Event was successfully updated.'
+</span><span class="marked1"><a name="line73"></a> 73         format.html { redirect_to([@calendar, @event]) }
+</span><span class="marked0"><a name="line74"></a> 74         format.xml  { head :ok }
 </span><span class="uncovered1"><a name="line75"></a> 75       else
 </span><span class="uncovered0"><a name="line76"></a> 76         format.html { render :action =&gt; &quot;edit&quot; }
 </span><span class="uncovered1"><a name="line77"></a> 77         format.xml  { render :xml =&gt; @event.errors, :status =&gt; :unprocessable_entity }
@@ -682,22 +682,22 @@ span.run100 {
 </span><span class="inferred0"><a name="line82"></a> 82   # DELETE /events/1
 </span><span class="inferred1"><a name="line83"></a> 83   # DELETE /events/1.xml
 </span><span class="marked0"><a name="line84"></a> 84   def destroy
-</span><span class="uncovered1"><a name="line85"></a> 85     @event = Event.find(params[:id])
-</span><span class="uncovered0"><a name="line86"></a> 86     @event.destroy
-</span><span class="uncovered1"><a name="line87"></a> 87 
-</span><span class="uncovered0"><a name="line88"></a> 88     respond_to do |format|
-</span><span class="uncovered1"><a name="line89"></a> 89 	  #format.html { redirect_to(calendar_events_path(@calendar)) }
-</span><span class="uncovered0"><a name="line90"></a> 90       #format.html { redirect_to(events_url) }
-</span><span class="uncovered1"><a name="line91"></a> 91 	  format.html { redirect_to(@calendar) }
-</span><span class="uncovered0"><a name="line92"></a> 92       format.xml  { head :ok }
-</span><span class="uncovered1"><a name="line93"></a> 93     end
-</span><span class="uncovered0"><a name="line94"></a> 94   end
+</span><span class="marked1"><a name="line85"></a> 85     @event = Event.find(params[:id])
+</span><span class="marked0"><a name="line86"></a> 86     @event.destroy
+</span><span class="inferred1"><a name="line87"></a> 87 
+</span><span class="marked0"><a name="line88"></a> 88     respond_to do |format|
+</span><span class="inferred1"><a name="line89"></a> 89 	  #format.html { redirect_to(calendar_events_path(@calendar)) }
+</span><span class="inferred0"><a name="line90"></a> 90       #format.html { redirect_to(events_url) }
+</span><span class="marked1"><a name="line91"></a> 91 	  format.html { redirect_to(@calendar) }
+</span><span class="marked0"><a name="line92"></a> 92       format.xml  { head :ok }
+</span><span class="inferred1"><a name="line93"></a> 93     end
+</span><span class="inferred0"><a name="line94"></a> 94   end
 </span><span class="inferred1"><a name="line95"></a> 95   
 </span><span class="marked0"><a name="line96"></a> 96   def load_calendar
-</span><span class="uncovered1"><a name="line97"></a> 97     @calendar = Calendar.find(params[:calendar_id])
-</span><span class="uncovered0"><a name="line98"></a> 98   end
-</span><span class="uncovered1"><a name="line99"></a> 99   
-</span><span class="uncovered0"><a name="line100"></a>100 end
+</span><span class="marked1"><a name="line97"></a> 97     @calendar = Calendar.find(params[:calendar_id])
+</span><span class="marked0"><a name="line98"></a> 98   end
+</span><span class="inferred1"><a name="line99"></a> 99   
+</span><span class="inferred0"><a name="line100"></a>100 end
 </span></pre><hr/>
     <p>Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'>rcov code coverage analysis tool for Ruby</a>
    version 0.8.1.2.</p>
